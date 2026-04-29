@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doctor Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <section class="doctor-hero">
+      <div class="doctor-hero-copy">
+        <p class="eyebrow">Doctor Control Center</p>
+        <h1>Manage patients, queue flow, token count, and consultation progress in one vibrant dashboard.</h1>
+        <p>Track live session activity, update token availability, and handle appointments with a more polished hospital control panel.</p>
+      </div>
+      <div class="doctor-hero-metrics">
+        <div class="metric-card metric-blue">
+          <span>Today Patients</span>
+          <strong>24</strong>
+        </div>
+        <div class="metric-card metric-pink">
+          <span>Completed</span>
+          <strong>14</strong>
+        </div>
+        <div class="metric-card metric-green">
+          <span>Active Queue</span>
+          <strong>10</strong>
+        </div>
+      </div>
+    </section>
+
+    <header class="topbar">
+      <div>
+        <h2>Doctor Dashboard</h2>
+        <p>Manage queue, token availability, and patient flow.</p>
+      </div>
+      <button class="btn doctor-btn" onclick="logout()">Logout</button>
+    </header>
+
+    <section class="doctor-grid">
+      <div class="doctor-main-panel">
+        <div class="doctor-profile-card">
+          <div class="doctor-avatar">DR</div>
+          <div>
+            <h3>Dr. Priya Ram</h3>
+            <p>General Physician • Rural Health Unit</p>
+            <div class="meta-row">
+              <span class="meta-tag">Available Now</span>
+              <span class="meta-tag">Morning Shift</span>
+              <span class="meta-tag">Tamil / English</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="doctor-kpi-grid">
+          <div class="doctor-kpi">
+            <span>Current Token</span>
+            <strong id="currentToken">12</strong>
+          </div>
+          <div class="doctor-kpi">
+            <span>Available Tokens</span>
+            <strong id="availableTokenCount">8</strong>
+          </div>
+          <div class="doctor-kpi">
+            <span>Average Wait</span>
+            <strong>20 min</strong>
+          </div>
+          <div class="doctor-kpi">
+            <span>No-shows</span>
+            <strong>2</strong>
+          </div>
+        </div>
+
+        <div class="hospital-card doctor-session-card">
+          <h3>Session Controls</h3>
+          <p>Quickly adjust daily token count and keep queue flow updated.</p>
+          <div class="doctor-actions">
+            <button class="btn doctor-btn" onclick="increaseTokens()">Increase Tokens</button>
+            <button class="btn" onclick="resetTokens()">Reset Tokens</button>
+            <button class="btn accent-btn" onclick="markNextCompleted()">Mark Next Completed</button>
+          </div>
+        </div>
+
+        <div class="hospital-card queue-card">
+          <div class="section-head">
+            <div>
+              <h3>Live Patient Queue</h3>
+              <p>Today’s consultation order and status overview.</p>
+            </div>
+            <span class="queue-badge">Live</span>
+          </div>
+
+          <div class="queue-table-wrap">
+            <table class="queue-table">
+              <thead>
+                <tr>
+                  <th>Token</th>
+                  <th>Patient</th>
+                  <th>Time</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="queueTableBody">
+                <tr>
+                  <td>12</td>
+                  <td>Kumar S</td>
+                  <td>11:30 AM</td>
+                  <td><span class="status-pill active">In Progress</span></td>
+                  <td><button class="small-action completed-btn">Completed</button></td>
+                </tr>
+                <tr>
+                  <td>13</td>
+                  <td>Meena R</td>
+                  <td>11:40 AM</td>
+                  <td><span class="status-pill waiting">Waiting</span></td>
+                  <td><button class="small-action no-show-btn">No-show</button></td>
+                </tr>
+                <tr>
+                  <td>14</td>
+                  <td>Arun K</td>
+                  <td>11:50 AM</td>
+                  <td><span class="status-pill waiting">Waiting</span></td>
+                  <td><button class="small-action completed-btn">Completed</button></td>
+                </tr>
+                <tr>
+                  <td>15</td>
+                  <td>Selvi P</td>
+                  <td>12:00 PM</td>
+                  <td><span class="status-pill priority">Priority</span></td>
+                  <td><button class="small-action no-show-btn">No-show</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <aside class="doctor-side-panel">
+        <div class="enquiry-box doctor-side-card doctor-highlight">
+          <h3>Consultation Summary</h3>
+          <div class="mini-summary-list">
+            <div class="mini-summary-item"><span>Patients Served</span><strong>14</strong></div>
+            <div class="mini-summary-item"><span>Queue Remaining</span><strong>10</strong></div>
+            <div class="mini-summary-item"><span>Emergency Cases</span><strong>1</strong></div>
+          </div>
+        </div>
+
+        <div class="enquiry-box doctor-side-card">
+          <h3>Next Patient</h3>
+          <p class="next-patient-name">Meena R</p>
+          <p>Token 13 • General Checkup</p>
+          <div class="meta-row">
+            <span class="meta-tag">ETA 8 min</span>
+            <span class="meta-tag">Vitals Ready</span>
+          </div>
+        </div>
+
+        <div class="enquiry-box doctor-side-card">
+          <h3>Quick Notes</h3>
+          <textarea class="doctor-notes" placeholder="Add a quick doctor note for the next patient..."></textarea>
+          <button class="btn full-btn doctor-btn">Save Note</button>
+        </div>
+      </aside>
+    </section>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

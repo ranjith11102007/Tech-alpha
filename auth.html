@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login & Sign Up</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="auth-shell role-auth-shell">
+    <section class="auth-showcase role-showcase">
+      <div class="auth-overlay"></div>
+      <div class="auth-showcase-content">
+        <p class="eyebrow">Unified Access Portal</p>
+        <h1>One professional page for patient and doctor login or sign-up.</h1>
+        <p>Tap a role, switch the interface instantly, and continue with the correct experience for patient access or doctor access.</p>
+
+        <div class="role-preview-stack">
+          <div class="role-preview-card">
+            <strong>Patient Access</strong>
+            <span>Book appointments, check hospitals, track queue, and receive updates.</span>
+          </div>
+          <div class="role-preview-card">
+            <strong>Doctor Access</strong>
+            <span>Manage queue, change token count, mark consultation status, and view patients.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="auth-panel">
+      <div class="auth-card role-auth-card">
+        <div class="role-switcher">
+          <button class="role-pill active" data-role="patient" onclick="setRole('patient')">Patient</button>
+          <button class="role-pill" data-role="doctor" onclick="setRole('doctor')">Doctor</button>
+        </div>
+
+        <div class="auth-mode-switch">
+          <button class="mode-tab active" data-mode="login" onclick="setAuthMode('login')">Login</button>
+          <button class="mode-tab" data-mode="signup" onclick="setAuthMode('signup')">Sign Up</button>
+        </div>
+
+        <div class="auth-card-top compact-top">
+          <div>
+            <p class="mini-label" id="roleLabel">Patient Access</p>
+            <h2 id="authTitle">Welcome back</h2>
+            <p id="authSubtitle">Login to book appointments and track your token status.</p>
+          </div>
+          <a href="index.html" class="auth-link-chip">Home</a>
+        </div>
+
+        <form class="auth-form" onsubmit="event.preventDefault(); handleUnifiedAuth();">
+          <div class="form-row two-col signup-only hidden-field">
+            <div class="form-group">
+              <label for="authName">Full Name</label>
+              <input type="text" id="authName" placeholder="Enter full name" />
+            </div>
+            <div class="form-group">
+              <label for="authPhone">Mobile Number</label>
+              <input type="tel" id="authPhone" placeholder="Enter mobile number" />
+            </div>
+          </div>
+
+          <div class="form-group doctor-only hidden-field">
+            <label for="hospitalCode">Hospital / Staff Code</label>
+            <input type="text" id="hospitalCode" placeholder="Enter hospital or staff code" />
+          </div>
+
+          <div class="form-group">
+            <label for="authEmail">Email Address</label>
+            <input type="email" id="authEmail" placeholder="Enter email address" required />
+          </div>
+
+          <div class="form-row two-col">
+            <div class="form-group">
+              <label for="authPassword">Password</label>
+              <input type="password" id="authPassword" placeholder="Enter password" required />
+            </div>
+            <div class="form-group signup-only hidden-field">
+              <label for="authConfirmPassword">Confirm Password</label>
+              <input type="password" id="authConfirmPassword" placeholder="Confirm password" />
+            </div>
+          </div>
+
+          <div class="form-row two-col signup-only hidden-field patient-only hidden-field">
+            <div class="form-group">
+              <label for="authVillage">Village / Town</label>
+              <input type="text" id="authVillage" placeholder="Enter village or town" />
+            </div>
+            <div class="form-group">
+              <label for="authLanguage">Preferred Language</label>
+              <select id="authLanguage">
+                <option value="">Select language</option>
+                <option>Tamil</option>
+                <option>English</option>
+                <option>Telugu</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="checkbox-row signup-only hidden-field">
+            <input type="checkbox" id="authTerms" />
+            <label for="authTerms">I agree to the terms, notifications, and privacy policy.</label>
+          </div>
+
+          <button type="submit" class="btn full-btn auth-submit" id="authSubmitBtn">Login as Patient</button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

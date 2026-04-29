@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="auth-shell signup-shell">
+    <section class="auth-showcase">
+      <div class="auth-overlay"></div>
+      <div class="auth-showcase-content">
+        <p class="eyebrow">Rural Healthcare Access</p>
+        <h1>Create your account and book smarter hospital appointments.</h1>
+        <p>Join a simple healthcare platform that helps patients find hospitals, track queues, and reduce waiting time with a friendly digital experience.</p>
+
+        <div class="auth-feature-list">
+          <div class="auth-feature-card">
+            <strong>Live Queue Status</strong>
+            <span>View token movement and estimated waiting time instantly.</span>
+          </div>
+          <div class="auth-feature-card">
+            <strong>Easy Appointment Booking</strong>
+            <span>Select hospital, doctor, and time slot in a few taps.</span>
+          </div>
+          <div class="auth-feature-card">
+            <strong>Rural Friendly Design</strong>
+            <span>Clean, readable, and simple interface for every user.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="auth-panel signup-panel">
+      <div class="auth-card signup-card">
+        <div class="auth-card-top">
+          <div>
+            <p class="mini-label">New User</p>
+            <h2>Create Account</h2>
+            <p>Sign up to book appointments and manage your healthcare visits easily.</p>
+          </div>
+          <a href="login.html" class="auth-link-chip">Login</a>
+        </div>
+
+        <form class="auth-form" onsubmit="event.preventDefault(); signupUser();">
+          <div class="form-row two-col">
+            <div class="form-group">
+              <label for="fullname">Full Name</label>
+              <input type="text" id="fullname" placeholder="Enter your full name" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Mobile Number</label>
+              <input type="tel" id="phone" placeholder="Enter mobile number" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email" required />
+          </div>
+
+          <div class="form-row two-col">
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" placeholder="Create password" required />
+            </div>
+            <div class="form-group">
+              <label for="confirmPassword">Confirm Password</label>
+              <input type="password" id="confirmPassword" placeholder="Confirm password" required />
+            </div>
+          </div>
+
+          <div class="form-row two-col">
+            <div class="form-group">
+              <label for="village">Village / Town</label>
+              <input type="text" id="village" placeholder="Enter village or town" required />
+            </div>
+            <div class="form-group">
+              <label for="language">Preferred Language</label>
+              <select id="language" required>
+                <option value="">Select language</option>
+                <option>Tamil</option>
+                <option>English</option>
+                <option>Telugu</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="checkbox-row">
+            <input type="checkbox" id="terms" required />
+            <label for="terms">I agree to the Terms, Privacy Policy, and appointment notifications.</label>
+          </div>
+
+          <button type="submit" class="btn full-btn auth-submit">Create My Account</button>
+        </form>
+
+        <div class="auth-footer-note">
+          <span>Already have an account?</span>
+          <a href="login.html">Sign in here</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

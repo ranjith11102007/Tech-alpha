@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patient Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <section class="hero-banner">
+      <div class="hero-copy">
+        <p class="eyebrow">Rural Healthcare Access</p>
+        <h1>Book faster. Track tokens live. Reach the right hospital on time.</h1>
+        <p>Explore nearby hospitals, compare token availability, and save appointment reminders in one colorful dashboard.</p>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card gradient-a">
+          <span>Hospitals Live</span>
+          <strong>12</strong>
+        </div>
+        <div class="stat-card gradient-b">
+          <span>Tokens Open</span>
+          <strong>25</strong>
+        </div>
+        <div class="stat-card gradient-c">
+          <span>Avg Wait</span>
+          <strong>15 min</strong>
+        </div>
+      </div>
+    </section>
+
+    <header class="topbar">
+      <div>
+        <h2>Patient Dashboard</h2>
+        <p>Find hospitals, book tokens, and check appointment reminders.</p>
+      </div>
+      <button class="btn" onclick="logout()">Logout</button>
+    </header>
+
+    <section class="listing-layout">
+      <div class="listing-main">
+        <div id="hospitalList" class="hospital-list"></div>
+      </div>
+
+      <aside class="listing-side">
+        <div class="enquiry-box vibrant-box">
+          <h3>Quick Help</h3>
+          <p>Need a callback from hospital staff? Send a quick enquiry.</p>
+          <input type="text" placeholder="Your name" />
+          <input type="text" placeholder="Mobile number" />
+          <button class="btn full-btn">Send Enquiry</button>
+        </div>
+
+        <div class="enquiry-box reminder-panel">
+          <h3>Appointment Reminder</h3>
+          <form id="reminderForm">
+            <input type="text" id="reminderTitle" placeholder="Appointment title" required />
+            <input type="date" id="reminderDate" required />
+            <input type="time" id="reminderTime" required />
+            <button type="submit" class="btn full-btn">Save Reminder</button>
+          </form>
+        </div>
+
+        <div class="enquiry-box reminder-box">
+          <h3>Saved Reminders</h3>
+          <ul id="reminderList"></ul>
+        </div>
+      </aside>
+    </section>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
